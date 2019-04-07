@@ -11,7 +11,6 @@ import UIKit
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var moviesTableView: UITableView!
-   
     var movies = [[String:Any]]()
 
     override func viewDidLoad() {
@@ -33,7 +32,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                 //casting movies as array of dicts
                 self.movies = dataDictionary["results"] as! [[String: Any]]
                 print(self.movies)
-                // TODO: Reload your table view data
                 self.moviesTableView.reloadData()
             }
         }
@@ -46,11 +44,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     //gets called movies.count
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        
+       // if cell off screen, recycle it to save memory, if none can be recycled create new one
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
         let currMovie = movies[indexPath.row]
+        
         //Swift optionals
-        cell.textLabel!.text = currMovie["title"] as? String
+        cell.titleLabel.text = currMovie["title"] as? String
+        cell.summaryLabel.text = currMovie["overview"] as? String
         return cell
     }
 
