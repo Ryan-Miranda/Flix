@@ -32,6 +32,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Flix">
                                         <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <font key="NSFont" size="47" name="Futura-Medium"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -40,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O3F-ky-ROO" secondAttribute="trailing" constant="119" id="1Cg-86-N12"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g0R-kb-bAQ" secondAttribute="bottom" constant="310" id="EXO-Jf-fIh"/>

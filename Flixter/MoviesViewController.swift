@@ -36,7 +36,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                 
                 //casting movies as array of dicts
                 self.movies = dataDictionary["results"] as! [[String: Any]]
-                print(self.movies)
                 self.moviesTableView.reloadData()
             }
         }
