@@ -15,7 +15,7 @@ class MovieDetailsViewControlelr: UIViewController {
     @IBOutlet weak var posterView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
-    
+
     var movie: [String:Any]!
 
     override func viewDidLoad() {
@@ -35,8 +35,6 @@ class MovieDetailsViewControlelr: UIViewController {
         let backdropSize = "w780"
         let backdropUrl = URL(string: "https://image.tmdb.org/t/p/\(backdropSize)\(movie["backdrop_path"] as! String)")
         backDropView.af_setImage(withURL: backdropUrl!)
-        
-        print(movie["id"])
     }
     
 

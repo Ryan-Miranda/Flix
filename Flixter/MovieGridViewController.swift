@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class MovieGridViewController: UIViewController {
+class MovieGridViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    @IBOutlet weak var collectionView: UICollectionView!
     
-     var movies = [[String:Any]]()
+    var movies = [[String:Any]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        collectionView.dataSource = self
+        collectionView.delegate = self
         getSimilarMovies()
-        
     }
     
     func getSimilarMovies(){
@@ -27,20 +31,34 @@ class MovieGridViewController: UIViewController {
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
-            // This will run when the network request returns
+           
             if let error = error {
                 print(error.localizedDescription)
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 
-                //casting movies as array of dicts
                 self.movies = dataDictionary["results"] as! [[String: Any]]
-                print(self.movies)
+                self.collectionView.reloadData()
             }
         }
         task.resume()
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movies.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieGridCell", for: indexPath) as! MovieGridCell
+        
+        let currMovie = movies[indexPath.item]
+        
+        let size = "w185"
+        let posterUrl = URL(string: "https://image.tmdb.org/t/p/\(size)\(currMovie["poster_path"] as! String)")
+        cell.posterView.af_setImage(withURL: posterUrl!)
+        
+        return cell
+    }
 
     /*
     // MARK: - Navigation
