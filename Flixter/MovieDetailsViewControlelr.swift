@@ -35,6 +35,8 @@ class MovieDetailsViewControlelr: UIViewController {
         let backdropSize = "w780"
         let backdropUrl = URL(string: "https://image.tmdb.org/t/p/\(backdropSize)\(movie["backdrop_path"] as! String)")
         backDropView.af_setImage(withURL: backdropUrl!)
+        
+        print(movie["id"])
     }
     
 
