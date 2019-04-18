@@ -21,10 +21,22 @@ class MovieGridViewController: UIViewController, UICollectionViewDelegate, UICol
         // Do any additional setup after loading the view.
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        //spaces bw rows
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
+        
+        //width of the phone but subtract the two space bw posters per row
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2)/3
+        layout.itemSize = CGSize(width: width, height: width * 1.5)
+        
         getSimilarMovies()
     }
     
     func getSimilarMovies(){
+        //Shazam's ID for "superhero" films
         let similarMovieID = 287947
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/\(similarMovieID)/similar?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US&page=1")!
