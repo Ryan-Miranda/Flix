@@ -19,16 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="O3F-ky-ROO">
-                                <rect key="frame" x="119" y="140" width="137" height="139"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="139" id="jWg-Yc-lcl"/>
-                                </constraints>
+                                <rect key="frame" x="118.5" y="144" width="138" height="139"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0R-kb-bAQ">
-                                <rect key="frame" x="145" y="295" width="85" height="62"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="fYm-Be-52O"/>
-                                </constraints>
+                                <rect key="frame" x="150.5" y="297.5" width="74" height="62"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Flix">
                                         <attributes>
@@ -43,12 +37,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O3F-ky-ROO" secondAttribute="trailing" constant="119" id="1Cg-86-N12"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g0R-kb-bAQ" secondAttribute="bottom" constant="310" id="EXO-Jf-fIh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g0R-kb-bAQ" secondAttribute="trailing" constant="145" id="Frf-Gj-Dc3"/>
-                            <constraint firstItem="O3F-ky-ROO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="119" id="Unj-hk-8CK"/>
-                            <constraint firstItem="g0R-kb-bAQ" firstAttribute="top" secondItem="O3F-ky-ROO" secondAttribute="bottom" constant="16" id="h87-zd-mtK"/>
-                            <constraint firstItem="g0R-kb-bAQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="hCg-lj-SIr"/>
+                            <constraint firstItem="O3F-ky-ROO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5UB-U2-HXp"/>
+                            <constraint firstItem="g0R-kb-bAQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-5" id="Qcp-Pa-dVF"/>
+                            <constraint firstItem="g0R-kb-bAQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d1p-4H-Qva"/>
+                            <constraint firstItem="O3F-ky-ROO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-120" id="kKb-Vb-yJP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
